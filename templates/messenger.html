@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Messenger{% endblock %}
+
+{% block includes %}
+    <link href="{% static 'css/messenger.css' %}" rel="stylesheet">
+    <script src="{% static 'js/common.js' %}"></script>
+{% endblock  %}
+
+{% block container %}
+
+<h2>You are logging in as <label class="userId" id="{{ user.id }}">"{{ user.first_name }}"</label></h2>
+
+<div class="clearfix"></div>
+
+<div class="row">
+    <div class="col-md-3 users_list pre-scrollable">
+        <div class="list-group">
+            <label class="userId" id="{{ user.id }}">"{{ user.first_name }}"</label>
+        </div>
+    </div>
+    <div class="col-md-9 chat_box">
+        <div class="messages pre-scrollable" id="messages">
+            <h2>Messages will be here</h2>
+        </div>
+        <div class="clearfix"></div>
+        <div class="fixed-bottom input-group">
+            <input type="text" class="form-control" placeholder="Start type a message" id="msg">
+            <span class="input-group-btn">
+                <button class="btn btn-info" type="button" id="send">Send</button>
+            </span>
+        </div><!-- /input-group -->
+    </div>
+    
+</div>
+
+{% endblock %}
+
